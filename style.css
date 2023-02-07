@@ -1,0 +1,72 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
+    background-color: brown;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.library-name {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 40px;
+    text-align: center;
+}
+
+.book-list-view-switch-container {
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.shelf {
+    padding: 20px;
+    background-color: yellow;
+    height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-list-table {
+    height: 500px;
+    width: 500px;
+    border: solid;
+    border-collapse: collapse;
+}
+
+.table-header {
+    border: solid;
+}
+
+.table-data {
+    border: solid;
+}
+
+.card-shelf {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 400px;
+    width: 300px;
+    background-color: white;
+}
