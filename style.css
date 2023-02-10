@@ -1,20 +1,161 @@
-html, body {
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100%;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+}
+
+.add-new-book-part {
+    width: 500px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    height: 80px;
+    width: 100%;
+    justify-self: start;
+    background-color: brown;
+    flex-grow: 0;
+}
+
+.book-info-form-container {
+    width: 100%;
+    background-color: gray;
+    flex-basis: calc(100vh - 80px);
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.book-info-form {
+    background-color: rgb(221, 218, 218);
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-info-form-title {
+    text-align: center;
+}
+
+.input-container {
+    align-self: center;
+}
+
+.status-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#radio-input {
+    align-self: flex-start;
+}
+
+input {
+    display: block;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    padding: 0 10px;
+}
+
+.status-choice-box {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+}
+
+#status-choice-label {
+    padding-bottom: 10px;
+}
+
+.status {
+    width: 40px;
+    height: 20px;
+}
+
+#status-read-box, #status-unread-box {
+    display: flex;
+}
+
+.add-btn-container {
+    align-self: center;
+}
+
+.crud-btn {
+    border-style: none;
+    border-radius: 10px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.add-btn {
+    background-color: #24a0ed;
+    width: 400px;
+}
+
+.add-btn:hover {
+    background-color: #3b5998;
+}
+
+.crud-btn:active {
+    box-shadow: 1px 1px 10px 2px black;
+}
+
+.delete-btn-table {
+    background-color: rgb(255, 65, 65);
+    width: 170px;
+}
+
+.delete-btn-table:hover {
+    background-color: #ad1700;
+}
+
+.main-part {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .nav-bar {
     background-color: brown;
-    height: 100px;
+    height: 80px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    padding: 0 30px;
+}
+
+.table-view-btn, .card-view-btn {
+    text-decoration: none;
+}
+
+.table-view-btn:hover, .card-view-btn:hover {
+    color: white;
+}
+
+.view-change-buttons {
+    display: flex;
+    gap: 30px;
 }
 
 .library-name {
@@ -24,37 +165,50 @@ body {
     text-align: center;
 }
 
-.book-list-view-switch-container {
+.view-change-buttons {
+    padding-right: auto;
+}
+
+.library-name-box {
     height: 100px;
     background-color: white;
+    flex-shrink: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 50px;
+    padding: 10px;
 }
 
 .shelf {
     padding: 20px;
     background-color: yellow;
-    height: calc(100vh - 200px);
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.book-list-table {
+.book-list-table-container {
+    display: block;
     height: 500px;
-    width: 500px;
+    overflow: auto;
+}
+
+.book-list-table {
     border: solid;
     border-collapse: collapse;
 }
 
-.table-header {
+.table-header, .table-data {
     border: solid;
+    height: 70px;
+    width: 200px;
 }
 
 .table-data {
-    border: solid;
+    text-align: center;
 }
 
 .card-shelf {
@@ -63,10 +217,16 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .card {
     height: 400px;
     width: 300px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
