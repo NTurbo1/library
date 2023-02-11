@@ -119,14 +119,34 @@ function tableListTheBooks() {
         tData4.textContent = b.publicationDate;
 
         let tData5 = document.createElement('td');
-        tData5.className = 'table-data';
+        tData5.classList.add('table-data');
         if (b.status) {
           tData5.textContent = 'Read';
-          tData5.style.backgroundColor = 'green';
+          tData5.classList.add('table-data-status-read');
         } else {
           tData5.textContent = 'Unread';
-          tData5.style.backgroundColor = 'red';
+          tData5.classList.add('table-data-status-unread');
         }
+
+        tData5.addEventListener('click', e => {
+          let tData = e.target;
+          let read = 'table-data-status-read';
+          let unread = 'table-data-status-unread';
+          let theTRow = tData.parentElement;
+          let bookNumber = theTRow.classList[0].split("-")[1];
+
+          if (tData.classList.contains(read)) {
+            tData.classList.remove('table-data-status-read');
+            tData.classList.add('table-data-status-unread');
+            tData.textContent = 'Unread';
+            myLibrary[bookNumber-1].status = false;
+          } else {
+            tData.classList.remove('table-data-status-unread');
+            tData.classList.add('table-data-status-read');
+            tData.textContent = 'Read';
+            myLibrary[bookNumber-1].status = true;
+          }
+        });
 
         let tData6 = document.createElement('td');
         tData6.className = 'table-data';
@@ -189,11 +209,27 @@ function cardListTheBooks() {
         readingStatusBox.classList.add('reading-status-box');
         if (b.status) {
           readingStatusBox.textContent = 'Read';
-          readingStatusBox.style.backgroundColor = 'green';
+          readingStatusBox.classList.add('card-status-read')
         } else {
           readingStatusBox.textContent = 'Unread';
-          readingStatusBox.style.backgroundColor = 'red';
+          readingStatusBox.classList.add('card-status-unread');
         }
+        readingStatusBox.addEventListener('click', e => {
+          let statusBox = e.target;
+          let bookNumber = statusBox.nextSibling.classList[2].split('-')[1];
+
+          if (statusBox.classList.contains('card-status-read')) {
+            statusBox.classList.remove('card-status-read');
+            statusBox.classList.add('card-status-unread');
+            statusBox.textContent = 'Unread';
+            myLibrary[bookNumber-1].status = false;
+          } else {
+            statusBox.classList.remove('card-status-unread');
+            statusBox.classList.add('card-status-read');
+            statusBox.textContent = 'Read';
+            myLibrary[bookNumber-1].status = true;
+          }
+        });
 
         let bookIndex = myLibrary.indexOf(b)+1;
         let deleteBtn = document.createElement('button');
