@@ -12,11 +12,13 @@ html {
 body {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
 }
 
 .add-new-book-part {
     width: 500px;
     flex-shrink: 0;
+    flex-grow: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,18 +122,17 @@ input {
     box-shadow: 1px 1px 10px 2px black;
 }
 
-.delete-btn-table {
+.delete-btn-table, .delete-btn-card {
     background-color: rgb(255, 65, 65);
     width: 170px;
 }
 
-.delete-btn-table:hover {
+.delete-btn-table:hover, .delete-btn-card:hover {
     background-color: #ad1700;
 }
 
 .main-part {
     display: flex;
-    flex-direction: column;
     flex-grow: 1;
 }
 
@@ -139,10 +140,11 @@ input {
     background-color: brown;
     height: 80px;
     flex-shrink: 0;
+    flex-grow: 0;
     display: flex;
     align-items: center;
-    justify-content: end;
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 50px;
 }
 
 .table-view-btn, .card-view-btn {
@@ -155,33 +157,38 @@ input {
 
 .view-change-buttons {
     display: flex;
+    margin-left: auto;
     gap: 30px;
 }
 
-.library-name {
-    font-size: 40px;
-    font-weight: 800;
-    letter-spacing: 40px;
-    text-align: center;
-}
-
-.view-change-buttons {
-    padding-right: auto;
-}
-
-.library-name-box {
-    height: 100px;
+.book-shelf-box {
+    width: calc(100% - 500px);
     background-color: white;
     flex-shrink: 0;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    padding: 10px;
+}
+
+.book-shelf-title {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-shelf-title > div {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 40px;
+    padding-left: 40px;
 }
 
 .shelf {
+    width: 100%;
     padding: 20px;
     background-color: yellow;
     flex-grow: 1;
@@ -229,4 +236,13 @@ input {
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+
+.reading-status-box {
+    width: 170px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

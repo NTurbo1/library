@@ -178,7 +178,35 @@ function cardListTheBooks() {
         p2.textContent = b.publicationDate;
         p2.style.display = "block";
 
-        card.append(h1, p1, p2);
+        let readingStatusBox = document.createElement('div');
+        readingStatusBox.classList.add('reading-status-box');
+        if (b.status) {
+          readingStatusBox.textContent = 'Read';
+          readingStatusBox.style.backgroundColor = 'green';
+        } else {
+          readingStatusBox.textContent = 'Unread';
+          readingStatusBox.style.backgroundColor = 'red';
+        }
+
+        let bookIndex = myLibrary.indexOf(b)+1;
+        let deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('crud-btn');
+        deleteBtn.classList.add('delete-btn-card');
+        deleteBtn.classList.add('card-' + bookIndex);
+        deleteBtn.textContent = 'Delete';
+
+        deleteBtn.addEventListener('click', e => {
+          let delBtn = e.target;
+          let bookNumber = delBtn.classList[2].split('-')[1];
+          myLibrary.splice(bookNumber-1, 1);
+
+          let cardToDelete = delBtn.parentElement;
+          cardToDelete.parentElement.removeChild(cardToDelete);
+
+          cardListTheBooks();
+        });
+
+        card.append(h1, p1, p2, readingStatusBox, deleteBtn);
         cardShelf.appendChild(card);
     });
 

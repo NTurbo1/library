@@ -9,64 +9,68 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="add-new-book-part">
-        <div class="logo"></div>
-        <div class="book-info-form-container">
-            <form action="/" id="new-book-info" class="book-info-form">
-
-                <h2 class="book-info-form-title">Want to add a new book?</h2>
-                <div class="input-container">
-                    <label for="book-title">Book Title</label>
-                    <input required type="text" id="book-title" name="title" placeholder="For example: The Hobbit">
-                </div>
-
-                <div class="input-container">
-                    <label for="author-first-name">Author's First Name</label>
-                    <input required type="text" id="author-first-name" name="firstName" placeholder="First name">
-                </div>
-
-                <div class="input-container">
-                    <label for="author-last-name">Author's Last Name</label>
-                    <input required type="text" id="author-last-name" name="lastName" placeholder="Last name">
-                </div>
-
-                <div class="input-container">
-                    <label for="publication-date">Publication Date</label>
-                    <input required type="text" id = "publication-date" name="publicationDate" placeholder="First name">
-                </div>
-
-                <div class="input-container status-box">
-                    <label id="status-choice-box-label">Have you read this book?</label>
-                    <div class="status-choice-box">
-                        <div id="status-read-box">
-                            <label for="status-read">Yes</label>
-                            <input required type="radio" id = "status-read" class="status" name="status" value="yes">
-                        </div>
-
-                        <div id="status-unread-box">
-                            <label for="status-unread">No</label>
-                            <input required type="radio" id = "status-unread" class="status" name="status" value="no">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="add-btn-container">
-                    <button type="submit" class="crud-btn add-btn">Add a book</button>
-                </div>
-            </form>
+    <div class="nav-bar">
+        <div class="library-name-logo-box">
+            <h1 class="library-name">LIBRARY</h1>
+        </div>
+        <div class="view-change-buttons">
+            <a class="table-view-btn">Table View</a>
+            <a class="card-view-btn">Card View</a>
         </div>
     </div>
     <div class="main-part">
-        <div class="nav-bar">
-            <div class="view-change-buttons">
-                <a class="table-view-btn">Table View</a>
-                <a class="card-view-btn">Card View</a>
+        <div class="add-new-book-part">
+            <div class="book-info-form-container">
+                <form action="/" id="new-book-info" class="book-info-form">
+    
+                    <h2 class="book-info-form-title">Want to add a new book?</h2>
+                    <div class="input-container">
+                        <label for="book-title">Book Title</label>
+                        <input required type="text" id="book-title" name="title" placeholder="For example: The Hobbit">
+                    </div>
+    
+                    <div class="input-container">
+                        <label for="author-first-name">Author's First Name</label>
+                        <input required type="text" id="author-first-name" name="firstName" placeholder="First name">
+                    </div>
+    
+                    <div class="input-container">
+                        <label for="author-last-name">Author's Last Name</label>
+                        <input required type="text" id="author-last-name" name="lastName" placeholder="Last name">
+                    </div>
+    
+                    <div class="input-container">
+                        <label for="publication-date">Publication Date</label>
+                        <input required type="text" id = "publication-date" name="publicationDate" placeholder="First name">
+                    </div>
+    
+                    <div class="input-container status-box">
+                        <label id="status-choice-box-label">Have you read this book?</label>
+                        <div class="status-choice-box">
+                            <div id="status-read-box">
+                                <label for="status-read">Yes</label>
+                                <input required type="radio" id = "status-read" class="status" name="status" value="yes">
+                            </div>
+    
+                            <div id="status-unread-box">
+                                <label for="status-unread">No</label>
+                                <input required type="radio" id = "status-unread" class="status" name="status" value="no">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="add-btn-container">
+                        <button type="submit" class="crud-btn add-btn">Add a book</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="library-name-box">
-            <div class="library-name">LIBRARY</div>
+        <div class="book-shelf-box">
+            <div class="book-shelf-title">
+                <div class="">BOOKS</div>
+            </div>
+            <div class="shelf"></div>
         </div>
-        <div class="shelf"></div>
     </div>
 </body>
 </html>
