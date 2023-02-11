@@ -27,6 +27,13 @@ bookInfoForm.addEventListener('submit', e => {
 
   let newBook = new Book(bTitle, fName, lName, pDate, status);
   addBookToLibrary(newBook);
+
+  document.getElementById('book-title').value = '';
+  document.getElementById('author-first-name').value = '';
+  document.getElementById('author-last-name').value = '';
+  document.getElementById('publication-date').value = '';
+  document.getElementById('status-read').checked = false;
+  document.getElementById('status-unread').checked = false;
 });
 
 function addBookToLibrary(book) {
