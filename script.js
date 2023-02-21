@@ -1,11 +1,13 @@
 let myLibrary = [];
 
-function Book(bookTitle, authorFirstName, authorLastName, publicationDate, status) {
-  // the constructor...
-  this.title = bookTitle;
-  this.author = authorFirstName + " " + authorLastName;
-  this.publicationDate = publicationDate;
-  this.status = status;
+class Book {
+  constructor(bookTitle, authorFirstName, authorLastName, publicationDate, status) {
+    // the constructor...
+    this.title = bookTitle;
+    this.author = authorFirstName + " " + authorLastName;
+    this.publicationDate = publicationDate;
+    this.status = status;
+  }
 }
 
 let bookShelf = document.getElementsByClassName('shelf')[0];
